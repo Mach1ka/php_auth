@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-8 mb-3">
                 <?php
-                if ($_COOKIE['log'] == ''):
+                if ($_COOKIE['login'] == ''):
                 ?>
                 <h4>Вход</h4>
                 <form action="" method="post">
@@ -36,7 +36,7 @@
                 </form>
                 <?php else: ?>
                 <h2>
-                    <?='Кабинет пользователя ' . $_COOKIE['log'] ?>
+                    <?='Кабинет пользователя ' . $_COOKIE['login'] ?>
                 </h2>
                 <button class="btn btn-danger mt-4" id="exit_btn">Выход</button>
 

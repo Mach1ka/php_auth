@@ -26,7 +26,7 @@ $user = $query->fetch(PDO::FETCH_OBJ);
 if ($user->id == 0) {
     echo 'Такого пользователя не существует';
 } else {
-    setcookie('log', $login, time() + 3600 * 24 * 30, "/");
+    setcookie('login', $login, time() + 3600 * 24 * 30, "/");
 
     echo 'ready';
 }
