@@ -77,6 +77,21 @@
                     $query = $pdo->prepare($sql);
                     $query->execute([$username, $message, $_GET['id']]);
                 }
+
+                $sql = 'SELECT * FROM `comments` WHERE `article_id`= :id ORDER BY `id` DESC';
+                $query = $pdo->prepare($sql);
+                $query->execute(['id' => $_GET['id']]);
+
+                $comments = $query->fetchAll(PDO::FETCH_OBJ);
+
+                foreach ($comments as $comment) {
+                    echo "<div class='alert alert-info mb-2'>
+                    <h4>$comment->name</h4>
+                    <p>$comment->message</p>
+                    </div>
+                    ";
+
+                }
                 ?>
             </div>
             <?php require 'blocks/aside.php'; ?>
